@@ -6,34 +6,56 @@
 }
 
 body {
-    background-color: #87140d;
+    /* background-color: #87140d; */
 }
 
 header {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div-header {
     padding-top: 30px;
-    height: 100px;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;  
+    align-items: center;
+}
+
+.line {
+    margin-top: 20px;
+    height: 3px;
+    background-color: #87140d;
+    width: 100%;
 }
 
 .menu {
     margin-right: 50px;
     display: flex;
     height: 30px;gap: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu a {
-    color: #170b23;
+    color: #87140d;
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
 }
 
 .menu a:hover {
-    border-bottom: 2px solid #170b23;
+    border-bottom: 2px solid #87140d;
 }
+
+#menu-icon {
+    display: none;
+}
+
+
 
 #logo {
     width: auto;
@@ -46,25 +68,24 @@ main {
 }
 
 main .carousel {
-    margin-top: 50px;
-    padding-right: 50px;width: 100%;
-    padding-left: 50px;height: 30vh;}
+    width: 100%;
+    height: 30vh;
+}
 
 main .carousel img {
     width: 100%;
     height: 100%;
+    max-width: 1200px;
 }
 
 .promotion {
     background-color: #dfae23;
-    margin-left: 50px;
-    height: 230px;
+    height: 420px;
     justify-content: space-around;
     margin-top: 50px;
-    display: flex;
-    margin-right: 50px;
+    flex-wrap: wrap;display: flex;
     align-items: center;
-    color: #170b23;
+    color: #fff;
 }
 
 .promotion img {
@@ -77,13 +98,7 @@ main .carousel img {
 }
 
 .cards {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 50px;
+    
 }
 
 .cards .card img {
@@ -91,24 +106,37 @@ main .carousel img {
 }
 
 .cards .card p {
-    color: #fff;
     font-size: 18px;
+    padding: 20px;
 }
 
 .card {
-    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 50px;
+    border-bottom: 1px solid black;
+    padding-bottom: 40px;
 }
 
+.card-invert {
+    flex-direction: row-reverse;
+}
 
+.text-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-top: 100px;
+    background-color: #87140d;
+    height: 30vh;
 }
 
 footer .info {
@@ -146,4 +174,55 @@ footer a {
 
 footer a:hover {
     border-bottom: 1px solid #dfae23;
+}
+
+@media only screen and (max-width: 600px) {
+    #menu-icon {
+        display: block;
+        width: 50px;
+        margin-right: 10px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        height: 100%;
+        padding: 40px 70px;
+        justify-content: start;
+        align-items: stretch;
+    }
+
+    .menu a {
+        margin-bottom: 10px;
+    }
+
+    main .carousel {
+        height: 15vh;
+    }
+
+    main .carousel img{
+        height: 10rem;
+    }
+
+    .cards {
+
+    }
+
+    .card {        
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .text-card {
+        margin-top: 10px;
+    }
+
+    .promotion h1 {
+        padding: 0px 60px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        height: 550px;
+    }
 }
